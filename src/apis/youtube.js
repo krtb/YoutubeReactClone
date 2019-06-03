@@ -5,7 +5,7 @@ require("dotenv").config();
 
 
 // creates instance of axios client with a couple of defaulted properties
-// .create allows us to make a customized little copy of it
+// .create allows us to make a customized little copy
 export default axios.create({
     baseURL: 'https://www.googleapis.com/youtube/v3',
     // will pass in query string when we actually make use of this instance
