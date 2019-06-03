@@ -24,8 +24,10 @@ class App extends React.Component{
     onTermSubmit = async term => {
         const resp = await youtube.get('/search', {
             params: {
-                q: term,
-            }
+                part: 'snippet',
+                maxResults: 5,
+                key: 'AIzaSyCnHCzNiBAcrjzYxExQlCYAzjm6BLmfPaE'
+            },
         })
         //  can see data in console => network => xhr => preview
         // here is wher list of videos is being returned
