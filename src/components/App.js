@@ -22,10 +22,11 @@ class App extends React.Component{
     intialFetch = (term) => {
         let getURL = 'https://www.googleapis.com/youtube/v3/search'
         let getBody = {
+            part: snippet,
             method: 'GET',
             headers: {
                 'content-type':'application/json',
-                'Access- Control - Allow - Origin': 'https://youtubereactclone.netlify.com'
+                'Access-Control-Allow-Origin': 'https://youtubereactclone.netlify.com'
             }
         }
         fetch(getURL, getBody).then(resp => resp.json())
