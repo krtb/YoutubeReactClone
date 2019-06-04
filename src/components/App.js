@@ -15,7 +15,19 @@ class App extends React.Component{
 
     // to show something more than just `loading...` text
     componentDidMount(){
-        this.onTermSubmit('buildings')
+        // this.onTermSubmit('buildings')
+        this.intialFetch('buildings')
+    }
+
+    intialFetch = (term) => {
+        let getURL = 'https://www.googleapis.com/youtube/v3/search'
+        let getBody = {
+            method: 'GET',
+            headers: {
+                'content-type':'application/json'
+            }
+        }
+        fetch(getURL, getBody).then(resp => resp.json())
     }
     
 
@@ -24,10 +36,12 @@ class App extends React.Component{
     onTermSubmit = async term => {
         const resp = await youtube.get('/search', {
             params: {
-                part: 'snippet',
-                maxResults: 5,
-                key: 'AIzaSyCnHCzNiBAcrjzYxExQlCYAzjm6BLmfPaE'
+                q: term,
             },
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+            }
         })
         //  can see data in console => network => xhr => preview
         // here is wher list of videos is being returned
