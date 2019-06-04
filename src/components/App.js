@@ -24,7 +24,8 @@ class App extends React.Component{
         let getBody = {
             method: 'GET',
             headers: {
-                'content-type':'application/json'
+                'content-type':'application/json',
+                'Access- Control - Allow - Origin': 'https://youtubereactclone.netlify.com'
             }
         }
         fetch(getURL, getBody).then(resp => resp.json())
