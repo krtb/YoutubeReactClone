@@ -22,7 +22,7 @@ class App extends React.Component{
     intialFetch = (term) => {
         let getURL = 'https://www.googleapis.com/youtube/v3/search'
         let getBody = {
-            part: snippet,
+            part: 'snippet',
             method: 'GET',
             headers: {
                 'content-type':'application/json',
