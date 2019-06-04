@@ -15,22 +15,22 @@ class App extends React.Component{
 
     // to show something more than just `loading...` text
     componentDidMount(){
-        // this.onTermSubmit('buildings')
-        this.intialFetch('buildings')
+        this.onTermSubmit('buildings')
+        // this.intialFetch('buildings')
     }
 
-    intialFetch = (term) => {
-        let getURL = 'https://www.googleapis.com/youtube/v3/search'
-        let getBody = {
-            part: 'snippet',
-            method: 'GET',
-            headers: {
-                'content-type':'application/json',
-                'Access-Control-Allow-Origin': 'https://youtubereactclone.netlify.com'
-            }
-        }
-        fetch(getURL, getBody).then(resp => resp.json())
-    }
+    // intialFetch = (term) => {
+    //     let getURL = 'https://www.googleapis.com/youtube/v3/search'
+    //     let getBody = {
+    //         part: 'snippet',
+    //         method: 'GET',
+    //         headers: {
+    //             'content-type':'application/json',
+    //             'Access-Control-Allow-Origin': 'https://youtubereactclone.netlify.com'
+    //         }
+    //     }
+    //     fetch(getURL, getBody).then(resp => resp.json())
+    // }
     
 
     // want to take list of videos received and set them as state on our APP component, will allow it to udpate, redender itself
@@ -39,6 +39,7 @@ class App extends React.Component{
         const resp = await youtube.get('/search', {
             params: {
                 q: term,
+                part: 'snippet',
             },
             headers: {
                 'Access-Control-Allow-Origin': '*',
