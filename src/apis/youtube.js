@@ -12,7 +12,5 @@ export default axios.create({
     params: {
         part: 'snippet',
         maxResults: 5,
-        key: 'AIzaSyCnHCzNiBAcrjzYxExQlCYAzjm6BLmfPaE',
-        Authorization: 'AIzaSyCnHCzNiBAcrjzYxExQlCYAzjm6BLmfPaE'
     },
 });
