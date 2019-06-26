@@ -1,5 +1,3 @@
-// app should be a class based component
-// will hold al of the different state for our Application
 import React from 'react';
 import SearchBar from './SearchBar'
 import youtube from '../apis/youtube'
